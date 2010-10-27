@@ -1,0 +1,80 @@
+\documentclass[12pt]{article}
+\setlength{\textheight}{9.80in}
+\setlength{\textwidth}{6.40in}
+\setlength{\oddsidemargin}{0.0mm}
+\setlength{\evensidemargin}{1.0mm}
+\setlength{\topmargin}{-0.6in}
+\setlength{\parindent}{0.2in}
+\setlength{\parskip}{1.5ex}
+\newtheorem{defn}{Definition}
+\renewcommand{\baselinestretch}{1.2}
+
+\begin{document}
+
+\bibliographystyle{prsty}
+\thispagestyle{empty}
+
+
+\title{Read This!}
+
+\author{C. Godsalve \\
+   email: seagods@hotmail.com}
+
+\maketitle
+
+\tableofcontents
+
+
+\section{Lost It!}
+
+The reason this is here is that I managed to lose the tex file for the PlotFiles document. As it is, I am unlikely to type the whole lot again, but the pdf file survives. So, I cannot correct or modify the document unless I suddenly become determined to type it all out again.
+This short document is here to outline any major changes to the PlotFiles.
+
+\section{Unpacking}
+
+Originally, the XFiles directory and the bitmaps directory were subdirectories of the PlotFiles, and all the programs were packed away in a subdirectory called Graphics. Now, each program is in a subdirectory of PlotFiles rather than PlotFiles/Graphics. Suppose you unpack the PlotFiles in a directory called Fred.
+That is you have Fred/PlotFiles. You now need to download and unpack both
+XFiles and bitmaps. That is you should end up with Fred/XFiles and Fred/bitmaps as well as Fred/PlotFiles. Now you should be ready to go.
+
+\section{Changed Dependencies}
+
+The programs need SDL and either Mesa or OpenGL. You may have to alter some  of the include statements to point to the right location for SDL.h for instance. Originally, the PlotFiles were written on a 32 bit machine and depended on truetype-1
+ and GLTT (Graphics Library True Type). Unfortunately, truetype-1 is no longer supported, and for the life of me I couldn't truetype-1 or GLTT to compile on a
+64 bit machine  using gcc-4.4.
+
+So, I had to change over to using truetype-2. This can't be used with GLTT, so you need to download and install OGLFT (Open-GL Free Type). The PlotFiles expects to find the necessary fonts in /usr/share/fonts. You will  need to edit some lines if your fonts are located elsewhere. Also, you may need to download and install some fonts if they don't happen to be on your machine.
+
+\section{Smaller Changes}
+
+A whole bunch of warnings used to thrown up on compiling any of the PlotFiles programmes (depracated conversion from blah-blah). I have modified the programmes by using lines like 
+\begin{verbatim}
+
+         char bitmaps0[]="../../bitmaps/HelpScreen.bmp";
+
+\end{verbatim}
+This gets rid of all those nasty looking warnings. The GLTT outline method has been replaced with the OGLFT draw method. Lastly, all the draw statements are now
+between glPushMatrix() and glPopMatrix() statements. This is because OGLFT modifies the openGL matrix, whereas GLTT didn't.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+

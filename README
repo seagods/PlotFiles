@@ -1,0 +1,2 @@
+I deleted the old Plotfiles, the new ones now use freetype2/OGLFT whereas before
+they used freetype1/OGLFT.
