@@ -32,8 +32,8 @@ some graphics programmes
 that I have written work. The programmes were written using OpenGL.
 
 
-OpenGL stands for "Open Graphics Library".
-The "Open" bit means that it is open source. You can see the
+OpenGL stands for ``Open Graphics Library".
+The ``Open" bit means that it is open source. You can see the
 source code, and modify it. The details of what exactly you 
 legally can and cannot do with the software are explained in
 the public license.
@@ -50,7 +50,7 @@ is to enable anyone to use my code more easily.
 All of my programmes can be quit at any time by pressing
  $<$Esc$>$,
  and $<$F1$>$ will bring up a help screen. The help screen
-shall vary from programme to programme because the "natural" 
+shall vary from programme to programme because the ``natural" 
 defaults will depend on the application. For instance
 in some applications we may wish to examine an object, in
 others we may view a world from a fixed location (as you
@@ -59,13 +59,13 @@ as in a first person computer game, or a flight simulator.
 
 All this is achieved through a non-existent entity: the OpenGL
 camera. In fact, OpenGL does its 3D modelling using matrix
-transformations. Even though the "OpenGL Camera" doesn't exist
+transformations. Even though the ``OpenGL Camera" doesn't exist
 as such, the notion of a camera is a useful,
  as long as we don't forget about the transformation stuff.
 
 We shall  take a quick look at what these transformations are
 like before moving on, because there is an oddity in that
-the transformations are "four dimensional". The position
+the transformations are ``four dimensional". The position
 vector of any point is the four vector $(x, y, z, w)$.
 In fact, usually $w=1$. If not the 3D position is actually
  $(x/w, y/w, z/w)$. Why on Earth do they do that?
@@ -87,7 +87,7 @@ a_{44} }.
 \end{equation}
 Here, we have split the right hand side up, and $(X, Y, Z)$
 is just the three vector that we would get if we multiplied
- $(x, y, z)$ by  a 3 by 3 matrix consisting of the "top" left
+ $(x, y, z)$ by  a 3 by 3 matrix consisting of the ``top left"
  part of the matrix in eqn.1. If we have
 $ a_{41}= a_{42}= a_{43}=0$ and $a_{44}=1$, then
 eqn.1 is equivalent to some arbitrary transformation
@@ -121,8 +121,8 @@ How all  this shall work shall differ for different applications.
 Nonetheless, the basics will be the same.
 
  Whatever happens, there will
-be a call to an OpenGL function called "gluPerspective". This
-defines a "view" volume in the shape of a frustum. This shape
+be a call to an OpenGL function called ``gluPerspective". This
+defines a ``view" volume in the shape of a frustum. This shape
 can be thought of as follows. Suppose you have a pyramid with 
 a rectangular base, and then chop off the point (the slice is parallel
 to the base). This is a frustum. 
@@ -149,7 +149,7 @@ camera in Fig.1.
 \caption{ 
 Relative to the origin $O$, we need a position vector 
 for the camera (${\bf c}$) and
-a position vector for the "stare at" point $P$ (${\bf s}$)
+a position vector for the ``stare at" point $P$ (${\bf s}$)
 }
 \end{figure}
 
@@ -173,10 +173,10 @@ to the right. (The fingers and thumb are still labelled $x$, $y$, and $z$ the
 same way as before.)
 
 
-Going back to Fig.1,  $P$ is the point that the camera is "staring at"
-or "focused on". 
+Going back to Fig.1,  $P$ is the point that the camera is ``staring at"
+or ``focused on". 
 We assign this point $P$ the position vector $\bf s$
- (s for "stare").
+ (s for ``stare").
 The camera is at position vector $\bf c$, and it looks
 in the direction $\bf v= s-c$. We remark that in a right handed
 system, the unit vectors along the axes $\bf i$, $\bf j$, and $\bf k$
@@ -214,7 +214,7 @@ then we have  the basis vector ${\bf j}^\prime=\bf j$, so
 ${\bf k}^\prime={\bf i}^\prime \times {\bf j}^\prime$. So, 
 ${\bf v}$ is in the $\bf j^\prime  k^\prime$ plane.
 
-The next type of coordinates we shall call "boom" coordinates
+The next type of coordinates we shall call ``boom" coordinates
 (the boom being a long stick on which the camera is mounted,
 the camera look direction is towards the base of the stick).
 This basis set is useful if we are looking at an object
@@ -238,10 +238,10 @@ The local boom type coordinates,  the camera is  at the end of a boom.
 \end{figure}
 We may wish to have the camera fixed at the origin, in which case 
 we reverse the directions of ${\bf i}^\prime$ and ${\bf k}^\prime$.
-We shall call this local coordinate set as "reverse boom".
+We shall call this local coordinate set as ``reverse boom".
 
 
-Lastly, we shall call a third set of coordinates "flight" coordinates.
+Lastly, we shall call a third set of coordinates ``flight" coordinates.
 The local coordinates are the roll pitch and yaw axes for the camera.
 So we use
 \begin{equation}
@@ -276,25 +276,25 @@ Utilities) or SDL (Simple Direct Layer). We shall use SDL.
 
 \subsection{Basic Structure}
 
-We shall  refer to our OpenGL programme as "Prog". So,
-we shall have a file called "Prog.h", and the very first
-line in the C++ source file "Prog.cpp" shall be ` \# include "Prog.h"'.
+We shall  refer to our OpenGL programme as ``Prog". So,
+we shall have a file called ``Prog.h", and the very first
+line in the C++ source file ``Prog.cpp" shall be ` \# include ``Prog.h"'.
  We shall declare all our
 global variables at the beginning of Prog.cpp. 
 These include, WIDTH,  HEIGHT, and SCREEN\_DEPTH.
-They are "const USHORT" (USHORT is a typedef for unsigned int), and 
+They are ``const USHORT" (USHORT is a typedef for unsigned int), and 
 WIDTH and HEIGHT are initialised
 at 800 and 600. These are to be the screen width and
 height in pixels. The SCREEN\_DEPTH is set at 16 bits per pixel.
 
-Surprisingly, the "main()" programme is just a few lines
+Surprisingly, the ``main()" programme is just a few lines
 in another header file  named Init.h. First of all main() initialises
 SDL, next  it sets up some SDL things by calling Setup(), 
 then a window is opened. The SizeOpenGLScreen functions
-sets up some OpenGL things including the "viewport",
+sets up some OpenGL things including the ``viewport",
  and makes that  call to gluPerspective.  As mentioned previously,
 this sets up a 
- "View Volume" in the shape of a frustum.
+ ``View Volume" in the shape of a frustum.
 Any object within this volume  is rendered. Here we set
  a view angle in the xz plane to 45 degrees, the aspect ratio
  to be the same as WIDTH:HEIGHT,
@@ -306,7 +306,7 @@ Its member data are the camera position vector, the stare
 at position vector, and ${\bf j}$ and ${\bf j}^\prime$.
 Next there is a call to Init(), which
 initialises such things as lighting. Then there is a call
-to EventLoop(Camera1). This is where the "action" takes place.
+to EventLoop(Camera1). This is where the ``action" takes place.
 
 
 First of all, data can be read in here, then all the 
@@ -314,11 +314,11 @@ permanent objects to be drawn
 are defined or loaded into the program.
 
 There is a bunch of SDL functions being used. It will suffice
-for the moment to know that they are "listening" to the
+for the moment to know that they are ``listening" to the
 keyboard and the mouse. There is a bool called quitit, which is
 initialised as false. After all is permanent data is loaded
 the 3D interactive stuff can start. This is done in
-a "while loop"  which runs until a bool called quitit 
+a ``while loop"  which runs until a bool called quitit 
 is set to be true.
 The quitit variable is set to be true as soon as an SDL function registers
 that the $<$Esc$<$ key has been pressed. Once this is pressed
@@ -344,7 +344,7 @@ definition of main(). The main() function's  job is just to
 sets up various things before calling
  EventLoop(Camera1). This EventLoop function can read in
 data and set up the 3D world. Once this is done, we enter
-a "game loop" which makes any alterations to the
+a ``game loop" which makes any alterations to the
 3D world on the fly, even if that is only altering the
 camera and view direction.
 
@@ -355,7 +355,7 @@ depending on these mouse and keyboard events.
 \subsection{Rotations of Camera Position and View Direction}
 
 The header file Camera.h contains the functions that change the
-camera position and "stare at" point. We begin with rotations
+camera position and ``stare at" point. We begin with rotations
 controled by the arrow keys. (The details may vary as to which functions
 are called on pressing which keys. We outline examples and explain
 what the functions do here, and will leave the rest to help screens 
@@ -412,9 +412,9 @@ looks left or right (corresponding to the left and right arrow keys).
 This rotation does not change the orientation of the cradle, so the
 local basis vectors remain unchanged. CamRotateView2 corresponds
 to looking up or down (again corresponding to the up and down arrow keys).
-We note that cherry picker can "drive around" with the camera in the cradle.
+We note that cherry picker can ``drive around" with the camera in the cradle.
 
-We have another mode, which we shall call {tethered}. Here the "stare at" point
+We have another mode, which we shall call {tethered}. Here the ``stare at" point
 is fixed at the origin. By analogy, the cherry picker has parked at the origin
 and put the handbrake on.  In this mode, we can still be in {\it xyz} mode
 as well, or in
@@ -442,7 +442,7 @@ which moves the camera toward or away from the origin. This is called when
 Now, we have yet more rotation functions, this time, they are controled via
 the mouse. These functions work as follows. SDL monitors any change in the 
 mouse pointers' {\it screen coordinates}. If there is any change, the {\it SDLWarpMouse}
-function immediately "Warps" the mouse back to the screen centre. However,
+function immediately ``warps" the mouse back to the screen centre. However,
  we do get the screen coordinates of the mouse before this is called, and these
 two numbers are used as proxies for angles. For example, in $xyz$ mode
 the $x$ screen coordinate determines
@@ -472,7 +472,7 @@ in boom mode.
 
 The camara also has free modes, where the camera roams at will.
 Two of these modes shall be called {\it wander} and {\it flight}.
-We use the name wander mode as it is similar to just "wandering about".
+We use the name wander mode as it is similar to just ``wandering about".
 If the user is not actively making the camera move, the camera stays
 still allowing the user to examine the view. In flight mode, the user
 is always on the move.
@@ -491,7 +491,7 @@ and down arrows let the camera look up and down. So,
 if the view is changed using MouseView or CamRotateView, and we then
 start moving again by pressing the up arrow say, we have changed direction
 of the camera's motion. This is because
-the camera always "chases" the view direction. So, unless we restrict the camera
+the camera always ``chases" the view direction. So, unless we restrict the camera
 to 2D motion, we shall have complete 3D freedom.
 
 In wander mode, we can rotate the camera about the stare at position
