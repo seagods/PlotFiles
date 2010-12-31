@@ -17,6 +17,9 @@
 #include <GL/glu.h>
 //#include <GL/glx.h> //need for bitmap fonts, now included via TrueType.h
 
+const char* WindowTitle="World Map Plot";
+bool picking=false;
+
 #include "/usr/include/SDL/SDL.h"
 #include "../../XFiles/D3Dvec.h"
 #include "../../XFiles/D2Dvec.h"

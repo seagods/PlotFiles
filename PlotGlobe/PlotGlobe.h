@@ -19,6 +19,10 @@ bool xtimesdiv, ytimesdiv, ztimesdiv;
 #include <GL/glu.h>
 //#include <GL/glx.h> //need for bitmap fonts?
 
+const char* WindowTitle="Plot the Globe";
+bool picking=false;
+
+
 #include "/usr/include/SDL/SDL.h"
 #include "../../XFiles/D3Dvec.h"
 #include "../../XFiles/Triangle.h"

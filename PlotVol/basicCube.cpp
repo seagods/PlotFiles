@@ -1,6 +1,6 @@
 //surface.dat MUST ALWAYS BE SQUARE!
 //-------------------------------------------------------------------------------
-// Copyright 2009 Christopher Godsalve.
+// Copyright 2009-2011 Christopher Godsalve.
 // All Rights Reserved.
 //
 // Permission to use, copy, modify and distribute this software (if not modified) and its

@@ -34,6 +34,9 @@ typedef unsigned int DWORD;  //yep, a DWORD is the same as a UINT...
 const USHORT WIDTH=800, HEIGHT=600;
 const USHORT SCREEN_DEPTH=16;
 
+const char* WindowTitle="Plot Contours";
+bool picking=false;
+
 extern const double twopi,pi;  //initialised externally
 
 /*********************************************************/

@@ -1,6 +1,6 @@
 //unless followed by glGetMaterial! 
 //-------------------------------------------------------------------------------
-// Copyright 2009 Christopher Godsalve.
+// Copyright 20092-11 Christopher Godsalve.
 // All Rights Reserved.
 //
 // Permission to use, copy, modify and distribute this software (if not modified) and its

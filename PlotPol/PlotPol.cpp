@@ -1,5 +1,5 @@
 //-------------------------------------------------------------------------------
-// Copyright 2009 Christopher Godsalve.
+// Copyright 2009-2011 Christopher Godsalve.
 // All Rights Reserved.
 //
 // Permission to use, copy, modify and distribute this software (if not modified) and its
@@ -30,6 +30,7 @@
 #include "../../XFiles/SetUp.h"  //loads of declarations and initialisations
 #include "../../XFiles/Controls.h"
 #include "../../XFiles/DrawWaxis.h"
+
 
 void EventLoop()
 {

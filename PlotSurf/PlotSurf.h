@@ -15,6 +15,9 @@
 #include <GL/gl.h>
 #include <GL/glu.h>
 
+const char* WindowTitle="Surface Plot";
+bool picking=false;
+
 #include "/usr/include/SDL/SDL.h"
 #include "../../XFiles/D3Dvec.h"
 #include "../../XFiles/D2Dvec.h"

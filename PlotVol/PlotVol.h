@@ -17,6 +17,9 @@
 #include <GL/gl.h>
 #include <GL/glu.h>
 
+const char* WindowTitle="Volumetric Plot";
+bool picking=false;
+
 #include "/usr/include/SDL/SDL.h"
 
 #include "../../XFiles/D3Dvec.h"

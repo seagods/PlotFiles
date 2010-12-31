@@ -23,6 +23,9 @@
 
 double speed=50.0, angspeed=0.05;
 
+const char* WindowTitle="Plot-It-2";
+bool picking=false;
+
 
 typedef unsigned char byte;
 typedef unsigned short int USHORT;
