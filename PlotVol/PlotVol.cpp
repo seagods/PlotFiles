@@ -688,8 +688,6 @@ void EventLoop()
       } // endif w axis text
 
 
-
-
     // In Plotsurf we stored line segment data for up to klinesmax
     // segments for each triangle (not stored in the triangle objects themselves
     // but stored "in parallel" to the triangles.
@@ -1049,9 +1047,11 @@ void RenderScene(CCam & Camera1)
       if(lightpos){
               glDisable(GL_DEPTH_TEST);
               glDisable(GL_LIGHTING);
+              glEnable(GL_BLEND);
                   bool drawbox;
 	          drawbox=true;
 	          DrawLightPos(drawbox);  //draw the box
+              glDisable(GL_BLEND);
               glEnable(GL_DEPTH_TEST);
               glEnable(GL_LIGHTING);
 
@@ -1061,15 +1061,18 @@ void RenderScene(CCam & Camera1)
       if(lightcol){
               glDisable(GL_DEPTH_TEST);
               glDisable(GL_LIGHTING);
+              glEnable(GL_BLEND);
                   bool drawbox;
 	          drawbox=true;
 	          DrawLightCol(drawbox);  //draw
+              glDisable(GL_BLEND);
               glEnable(GL_DEPTH_TEST);
               glEnable(GL_LIGHTING);
 
 	      drawbox=false;   //pickmatrix
 	      DrawLightCol(drawbox);
 	       }
+       /*   Materials set by contour level, not needed
       if(matcol){
               glDisable(GL_DEPTH_TEST);
               glDisable(GL_LIGHTING);
@@ -1082,6 +1085,7 @@ void RenderScene(CCam & Camera1)
 	      drawbox=false;   //pickmatrix
 	      DrawMatCol(drawbox);
 	       }
+     */
 
      if(movetext){
               glDisable(GL_DEPTH_TEST);

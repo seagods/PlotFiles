@@ -52,13 +52,6 @@ void EventLoop()
  bool verbose=false;
 
  if(hidemousecursor)SDL_ShowCursor(0);
-      if(LIGHTS){
-	      speed=5.0;
-	      angspeed=0.01;}
-      else
-      {
-	      speed=1.0;
-	      angspeed=0.005;}
 
 //Override Setup.h
 LIGHTS=false;
@@ -281,11 +274,15 @@ LIGHTS=false;
 
     for(int i=0; i<nplots;i++){
      //       double xtemp,ytemp;
-            file_in  >> *(ndata+i) >> *(ntype+i) >> *(ncol+i) >> *(nstyle+i) >>*(npoint+i);
+            file_in  >> *(ndata+i) >> *(ntype+i) >> *(ncol+i) >> *(nstyle+i) >> *(npoint+i);
+            if(*(ncol+i)>imats){
+               cout << "colour code for curve " << i << " exceeds number of material colours " << imats <<endl;
+               exit(1);
+           }
             cout << "ndata=" << *(ndata+i) << "  ";
             cout << "ntype=" << *(ntype+i) << "  ";
             cout << "ncol=" << *(ncol+i) <<  "  ";
-            cout << "nstyle=" << *(nstyle+i) << endl;
+            cout << "nstyle=" << *(nstyle+i) <<   "  ";
             cout << "point size=" << *(npoint+i) << endl;
 	    *(x+i)=(double*)calloc(*(ndata+i),sizeof(double));
 	    *(y+i)=(double*)calloc(*(ndata+i),sizeof(double));
@@ -559,13 +556,13 @@ LIGHTS=false;
        /************************************************************/
               CheckMove(Camera1);
 		    if(a_Pressed){
-			    speed=speed+0.1;
+			    speed=speed+0.01;
 			    angspeed=angspeed+0.001;
 			    if(speed > 60)speed=60;
 			    if(angspeed  > 0.15)angspeed=0.15;
 		    }
 		    if(z_Pressed){
-			    speed=speed-0.1;
+			    speed=speed-0.01;
 			    angspeed=angspeed-0.001;
 			    if(speed  < 0)speed=0;
 			    if(angspeed  < 0)angspeed=0;
@@ -718,23 +715,25 @@ void RenderScene(CCam & Camera1)
 	      drawbox=false;   //pickmatrix
 	      DrawTextMove(drawbox);
               }
+              MouseOn=false;
 
              if(stylechange){
               glDisable(GL_DEPTH_TEST);
               glDisable(GL_LIGHTING);
+              glEnable(GL_BLEND);
                   bool drawbox;
 	          drawbox=true;
 	          DrawCurveCol(drawbox);  //draw
+              glDisable(GL_BLEND);
               glEnable(GL_DEPTH_TEST);
               glEnable(GL_LIGHTING);
 
 	      drawbox=false;   //pickmatrix
 	      DrawCurveCol(drawbox);
               }
+              MouseOn=false;
 
-         //    legendplot=false;
              if(legendplot){
-               
                bool drawbox;
                glDisable(GL_DEPTH_TEST);
                glDisable(GL_LIGHTING);
@@ -743,14 +742,12 @@ void RenderScene(CCam & Camera1)
                glEnable(GL_DEPTH_TEST);
                glEnable(GL_LIGHTING);
 
-             // cout << post_Pressed << endl;
 	       drawbox=false;   //pickmatrix
 	       if(!post_Pressed)DrawLegend(drawbox);
                
                //if you make a call to gl2ps where
                 //selection mode is being switched
                 // you get no output!
-
                 }
  
 	      SDL_GL_SwapBuffers();

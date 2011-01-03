@@ -281,6 +281,10 @@ LIGHTS=false;
 //adapt to read z later
     for(int i=0; i<nplots;i++){
             file_in  >> *(ndata+i) >> *(ntype+i) >> *(ncol+i) >> *(nstyle+i) >>*(npoint+i);
+            if(*(ncol+i)>imats){
+               cout << "colour code for curve " << i << " exceeds number of material colours " << imats <<endl;
+               exit(1);
+           }
             cout << "ndata=" << *(ndata+i) << "  ";
             cout << "ntype=" << *(ntype+i) << "  ";
             cout << "ncol=" << *(ncol+i) <<  "  ";
@@ -637,9 +641,6 @@ LIGHTS=false;
 void RenderScene(CCam & Camera1)
 {
    glClearColor(RedM[0][0],GreenM[0][0],BlueM[0][0] ,AlphaM[0][0]);
-	float fogColor[4]= 
-	{RedM[0][0],GreenM[0][0],BlueM[0][0],AlphaM[0][0]};
-	glFogfv(GL_FOG_COLOR, fogColor);
    //background colour initialised
 
        glClear(GL_COLOR_BUFFER_BIT  | GL_DEPTH_BUFFER_BIT);
@@ -774,12 +775,12 @@ void RenderScene(CCam & Camera1)
 
              if(stylechange){
               glDisable(GL_DEPTH_TEST);
-              glDisable(GL_LIGHTING);
+              glEnable(GL_BLEND);
                   bool drawbox;
 	          drawbox=true;
 	          DrawCurveCol(drawbox);  //draw
+              glDisable(GL_BLEND);
               glEnable(GL_DEPTH_TEST);
-              glEnable(GL_LIGHTING);
 
 	      drawbox=false;   //pickmatrix
 	      DrawCurveCol(drawbox);
