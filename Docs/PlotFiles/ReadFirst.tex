@@ -32,9 +32,20 @@ This short document is here to outline any major changes to the PlotFiles.
 
 \section{Unpacking}
 
+If you have a copy of this document, but don't have the PlotFiles you need
+to  do
+\begin{verbatim}
+git clone git@github.com:seagods/PlotFiles.git
+git clone git@github.com:seagods/XFiles.git
+git clone git@github.com:seagods/bitmaps.git
+\end{verbatim}
+in a terminal.
+
+
 Originally, the XFiles directory and the bitmaps directory were subdirectories of the PlotFiles, and all the programs were packed away in a subdirectory called Graphics. Now, each program is in a subdirectory of PlotFiles rather than PlotFiles/Graphics. Suppose you unpack the PlotFiles in a directory called Fred.
 That is you have Fred/PlotFiles. You now need to download and unpack both
 XFiles and bitmaps. That is you should end up with Fred/XFiles and Fred/bitmaps as well as Fred/PlotFiles. Now you should be ready to go.
+All the PlotFiles look for the XFiles and bitmaps  directies in /usr/local/include. If you (or the systems manager) really don't them there, you will have to modify all the include statements so they are picked up where wyou want to bit the XFiles and bitmaps directories.
 
 \section{Changed Dependencies}
 
