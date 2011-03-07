@@ -31,16 +31,16 @@
 #include <sstream>  //read and write to string
 
 
-#include "../../XFiles/SetUp.h"  //loads of declarations and initialisations
-#include "../../XFiles/TrueType.h"
-#include "../../XFiles/Controls.h"
-#include "../../XFiles/DrawLightPos.h"
-#include "../../XFiles/DrawLightCol.h"
-#include "../../XFiles/DrawMatCol.h"
-#include "../../XFiles/DrawLogicBox.h"
-#include "../../XFiles/DrawFlipperBox.h"
-#include "../../XFiles/DrawWaxis.h"
-#include "../../XFiles/DrawTextMove2.h"
+#include "/usr/local/include/XFiles/SetUp.h"  //loads of declarations and initialisations
+#include "/usr/local/include/XFiles/TrueType.h"
+#include "/usr/local/include/XFiles/Controls.h"
+#include "/usr/local/include/XFiles/DrawLightPos.h"
+#include "/usr/local/include/XFiles/DrawLightCol.h"
+#include "/usr/local/include/XFiles/DrawMatCol.h"
+#include "/usr/local/include/XFiles/DrawLogicBox.h"
+#include "/usr/local/include/XFiles/DrawFlipperBox.h"
+#include "/usr/local/include/XFiles/DrawWaxis.h"
+#include "/usr/local/include/XFiles/DrawTextMove2.h"
 
 
 double W=50000;     //global mesh dimensions OpenGL
@@ -1131,7 +1131,7 @@ void RenderScene(CCam & Camera1)
 	      SDL_GL_SwapBuffers();
 }
 
-#include "../../XFiles/Init.cpp"
+#include "/usr/local/include/XFiles/Init.cpp"
 
 void DrawScene(CCam & Camera1, bool drawscene)
 {

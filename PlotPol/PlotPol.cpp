@@ -25,11 +25,11 @@
 //--------------------------------------------------------------------------------
 #include "PlotPol.h"
 
-#include "../../XFiles/TrueType.h"
+#include "/usr/local/include/XFiles/TrueType.h"
 
-#include "../../XFiles/SetUp.h"  //loads of declarations and initialisations
-#include "../../XFiles/Controls.h"
-#include "../../XFiles/DrawWaxis.h"
+#include "/usr/local/include/XFiles/SetUp.h"  //loads of declarations and initialisations
+#include "/usr/local/include/XFiles/Controls.h"
+#include "/usr/local/include/XFiles/DrawWaxis.h"
 
 
 void EventLoop()
@@ -63,7 +63,7 @@ void EventLoop()
  //   f_stream opens for both
  //
  // Camera1 position and stare at point have defaults
- // in ../../XFiles.
+ // in /usr/local/include/XFiles.
  // CamPos is in OpenGL y=0 plane, at x=0, z=-3000,
  // stare at origin. Also jprime=OpenGL j, iprime=OpenGL i
  // and kprime=OpenGL k.
@@ -907,7 +907,7 @@ void RenderScene(CCam & Camera1)
 	      SDL_GL_SwapBuffers();
 }
 
-#include "../../XFiles/Init.cpp"
+#include "/usr/local/include/XFiles/Init.cpp"
 
 void DrawScene(CCam & Camera1, bool drawscene)
 {
@@ -1128,6 +1128,7 @@ void DrawScene(CCam & Camera1, bool drawscene)
               z3=zlow+(z3-zmin)*zScale;
                
               z1=0; z2=0; z3=0;
+
           glBegin(GL_TRIANGLES);
               glColor3f(zred1,zgreen1,zblue1);
               glVertex3f((float)x1,(float)z1,-(float)y1);

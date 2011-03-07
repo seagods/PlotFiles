@@ -25,16 +25,16 @@
 //--------------------------------------------------------------------------------
 #include "PlotSurf.h"
 
-#include "../../XFiles/TrueType.h"
+#include "/usr/local/include/XFiles/TrueType.h"
 
-#include "../../XFiles/SetUp.h"  //loads of declarations and initialisations
-#include "../../XFiles/Controls.h"
-#include "../../XFiles/DrawLightPos.h"
-#include "../../XFiles/DrawLightCol.h"
-#include "../../XFiles/DrawMatCol.h"
-#include "../../XFiles/DrawLogicBox.h"
-#include "../../XFiles/DrawTextMove2.h"
-#include "../../XFiles/DrawLegendsurf.h"
+#include "/usr/local/include/XFiles/SetUp.h"  //loads of declarations and initialisations
+#include "/usr/local/include/XFiles/Controls.h"
+#include "/usr/local/include/XFiles/DrawLightPos.h"
+#include "/usr/local/include/XFiles/DrawLightCol.h"
+#include "/usr/local/include/XFiles/DrawMatCol.h"
+#include "/usr/local/include/XFiles/DrawLogicBox.h"
+#include "/usr/local/include/XFiles/DrawTextMove2.h"
+#include "/usr/local/include/XFiles/DrawLegendsurf.h"
 
 void EventLoop()
 {
@@ -68,7 +68,7 @@ void EventLoop()
  //   f_stream opens for both
  //
  // Camera1 position and stare at point have defaults
- // in ../../XFiles.
+ // in /usr/local/include/XFiles.
  // CamPos is in OpenGL y=0 plane, at x=0, z=-3000,
  // stare at origin. Also jprime=OpenGL j, iprime=OpenGL i
  // and kprime=OpenGL k.
@@ -708,6 +708,7 @@ void EventLoop()
                         *(*(conty1+i)+j*klinesmax+kl)=yc13;
                         *(*(contz1+i)+j*klinesmax+kl)=zc;
                         *(*(contx2+i)+j*klinesmax+kl)=xc23;
+
                         *(*(conty2+i)+j*klinesmax+kl)=yc23;
                         *(*(contz2+i)+j*klinesmax+kl)=zc;
                         *(*(cont+i)+j)=true;
@@ -1030,7 +1031,7 @@ void RenderScene(CCam & Camera1)
 	      SDL_GL_SwapBuffers();
 }
 
-#include "../../XFiles/Init.cpp"
+#include "/usr/local/include/XFiles/Init.cpp"
 
 void DrawScene(CCam & Camera1, bool drawscene)
 {

@@ -25,12 +25,12 @@
 //--------------------------------------------------------------------------------
 #include "PlotWorld.h"
 
-#include "../../XFiles/TrueType.h"
+#include "/usr/local/include/XFiles/TrueType.h"
 
-#include "../../XFiles/SetUp.h"  //loads of declarations and initialisations
-#include "../../XFiles/Controls.h"
-#include "../../XFiles/DrawTextMove2.h"
-#include "../../XFiles/DrawWaxis.h"
+#include "/usr/local/include/XFiles/SetUp.h"  //loads of declarations and initialisations
+#include "/usr/local/include/XFiles/Controls.h"
+#include "/usr/local/include/XFiles/DrawTextMove2.h"
+#include "/usr/local/include/XFiles/DrawWaxis.h"
 
 #define LINE0 0xFFFF
 #define LINE1 0x0101
@@ -68,7 +68,7 @@ void EventLoop()
  //   f_stream opens for both
  //
  // Camera1 position and stare at point have defaults
- // in ../../XFiles.
+ // in /usr/local/include/XFiles.
  // CamPos is in OpenGL y=0 plane, at x=0, z=-3000,
  // stare at origin. Also jprime=OpenGL j, iprime=OpenGL i
  // and kprime=OpenGL k.
@@ -619,7 +619,7 @@ void EventLoop()
     if(wgreen[iwnumb-1]<0)wgreen[iwnumb-1]=0;
     if(wblue[iwnumb-1]>1.0)wblue[iwnumb-1]=1.0;
     
-    filename="../../XFiles/MyWorld.dat";
+    filename="/usr/local/include/XFiles/MyWorld.dat";
     file_in.close(); 
     file_in.open(filename.c_str());   
     double xlat,xlong;
@@ -960,7 +960,7 @@ void RenderScene(CCam & Camera1)
 	      SDL_GL_SwapBuffers();
 }
 
-#include "../../XFiles/Init.cpp"
+#include "/usr/local/include/XFiles/Init.cpp"
 
 void DrawScene(CCam & Camera1, bool drawscene)
 {

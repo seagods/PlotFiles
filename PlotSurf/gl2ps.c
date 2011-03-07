@@ -54,7 +54,7 @@
 #include <stdarg.h>
 #include <time.h>
 #include <float.h>
-#include "../../XFiles/gl2ps.h"
+#include "/usr/local/include/XFiles/gl2ps.h"
 
 /********************************************************************* 
  *

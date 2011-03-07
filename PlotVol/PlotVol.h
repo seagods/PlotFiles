@@ -22,12 +22,12 @@ bool picking=false;
 
 #include "/usr/include/SDL/SDL.h"
 
-#include "../../XFiles/D3Dvec.h"
-#include "../../XFiles/D2Dvec.h"
-#include "../../XFiles/Triangle.h"
-#include "../../XFiles/throwcatch.h"
-#include "../../XFiles/MeshNode.h"
-#include "../../XFiles/RayMeshTet.h"
+#include "/usr/local/include/XFiles/D3Dvec.h"
+#include "/usr/local/include/XFiles/D2Dvec.h"
+#include "/usr/local/include/XFiles/Triangle.h"
+#include "/usr/local/include/XFiles/throwcatch.h"
+#include "/usr/local/include/XFiles/MeshNode.h"
+#include "/usr/local/include/XFiles/RayMeshTet.h"
 
 
 double speed=50.0, angspeed=0.05;
@@ -108,8 +108,8 @@ D3Dvec* edges1;
 D3Dvec* edges2;
 D3Dvec* Normals;
 D3Dvec* NormalsG;
-#include "../../XFiles/List.h"
-#include "../../XFiles/Node1.h"
+#include "/usr/local/include/XFiles/List.h"
+#include "/usr/local/include/XFiles/Node1.h"
 typedef CMyNode1<int>  ListNode;
 typedef CMyNode1<char>  ListNode_char;
 typedef CMyLinkedList<ListNode> intList;
@@ -123,8 +123,8 @@ int const MD=4;  //MAXIMUM DEPTH OF TREE (depth ranges from 0 to MD
 
 
 
-#include "../../XFiles/TriOctNode.h"
-#include "../../XFiles/TriOctTree.h"
+#include "/usr/local/include/XFiles/TriOctNode.h"
+#include "/usr/local/include/XFiles/TriOctTree.h"
 typedef CMyOctNode <D3Dvec> ONode; //An ONode shall hold a vector
                                    //describing the compare point
 				   // and a list of integers
@@ -132,8 +132,8 @@ typedef CMyOctNode <D3Dvec> ONode; //An ONode shall hold a vector
 typedef CMyTriOctTree<ONode> OTree;   //OctTree consists of nodes
         OTree* CollideTree;
 /**********************************************************************/
-#include "../../XFiles/Dmatrix.h"
-#include "../../XFiles/Solver.h"
+#include "/usr/local/include/XFiles/Dmatrix.h"
+#include "/usr/local/include/XFiles/Solver.h"
 /**********************************************************************/
 void Solver(int &dim, double &maxerr, Dmatrix& Matrix, Dvector& rhs, Dvector& SolveVec);
 /**********************************************************************/
@@ -142,8 +142,8 @@ D3Dvec RealCamPos;  //periodic boundary conditions
                     //CamPos thinks it  wanders in infinite space
 		    //But RealCamPos knows about the pbc.
 double X1, X2, Y1, Y2, Z1, Z2;
-#include "../../XFiles/Camera.h"
-#include "../../XFiles/gl2ps.h"
+#include "/usr/local/include/XFiles/Camera.h"
+#include "/usr/local/include/XFiles/gl2ps.h"
 
 extern int VideoFlags;
 extern SDL_Surface * MainWindow;
@@ -210,7 +210,7 @@ const int nplotsmax=1;
 
 bool periodicx=true, periodicy=true, periodicz=true;
 
-#include "../../XFiles/Init.h"
+#include "/usr/local/include/XFiles/Init.h"
 
 double xmin,xmax,xrange;
 double ymin,ymax,yrange;
@@ -274,7 +274,7 @@ string *LegendStrings;
 bool blendon=true, autoblend=true;
 bool drawgrid=true, drawcontours=true;
 
-#include "../../XFiles/numbers_wxyz.h"
+#include "/usr/local/include/XFiles/numbers_wxyz.h"
 
 vector <Triangle*>  IsoTris;
 vector <D3Dvec*>  IsoVecs;

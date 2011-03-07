@@ -32,14 +32,14 @@ time_t rawtime1;
 time_t rawtime2;
 
 
-#include "../../XFiles/TrueType.h"
+#include "/usr/local/include/XFiles/TrueType.h"
 
-#include "../../XFiles/SetUp.h"  //loads of declarations and initialisations
-#include "../../XFiles/Controls.h"
-#include "../../XFiles/DrawLightPos.h"
-#include "../../XFiles/DrawLightCol.h"
-#include "../../XFiles/DrawMatCol.h"
-#include "../../XFiles/DrawLogicBox.h"
+#include "/usr/local/include/XFiles/SetUp.h"  //loads of declarations and initialisations
+#include "/usr/local/include/XFiles/Controls.h"
+#include "/usr/local/include/XFiles/DrawLightPos.h"
+#include "/usr/local/include/XFiles/DrawLightCol.h"
+#include "/usr/local/include/XFiles/DrawMatCol.h"
+#include "/usr/local/include/XFiles/DrawLogicBox.h"
 
 #define LINE0 0xFFFF
 #define LINE1 0x0101
@@ -83,7 +83,7 @@ g_RenderMode=GLU_FILL; // this is for quadrics only
  //   f_stream opens for both
  //
  // Camera1 position and stare at point have defaults
- // in ../../XFiles.
+ // in /usr/local/include/XFiles.
  // CamPos is in OpenGL y=0 plane, at x=0, z=-3000,
  // stare at origin. Also jprime=OpenGL j, iprime=OpenGL i
  // and kprime=OpenGL k.
@@ -246,7 +246,7 @@ g_RenderMode=GLU_FILL; // this is for quadrics only
 
     string filename;
     ifstream file_in;
-    filename="../../XFiles/MyWorld.dat";
+    filename="/usr/local/include/XFiles/MyWorld.dat";
     file_in.open(filename.c_str());   
     double xlat,xlong;
     file_in >> nlines;
@@ -337,7 +337,7 @@ g_RenderMode=GLU_FILL; // this is for quadrics only
 
 }
 
-#include "../../XFiles/Init.cpp"
+#include "/usr/local/include/XFiles/Init.cpp"
 //
 void RenderScene(CCam & Camera1)
 {
