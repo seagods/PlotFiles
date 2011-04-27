@@ -800,7 +800,7 @@ void RenderScene(CCam & Camera1)
               }
 
          //    legendplot=false;
-             if(legendplot){
+             if(legendplot && LegendExists){
 
                bool drawbox;
                glDisable(GL_DEPTH_TEST);

@@ -999,7 +999,7 @@ void RenderScene(CCam & Camera1)
 			    Picking=false;}
 		    else{ Picking=true;}}
 
-             if(legendplot && !helpscreen){
+             if(LegendExists && legendplot && !helpscreen){
 
                bool  lite;
                lite=LIGHTS;

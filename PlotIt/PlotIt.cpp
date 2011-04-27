@@ -733,7 +733,7 @@ void RenderScene(CCam & Camera1)
               }
               MouseOn=false;
 
-             if(legendplot){
+             if(LegendExists && legendplot){
                bool drawbox;
                glDisable(GL_DEPTH_TEST);
                glDisable(GL_LIGHTING);
