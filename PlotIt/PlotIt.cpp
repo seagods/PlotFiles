@@ -5,8 +5,8 @@
 // Permission to use, copy, modify and distribute this software (if not modified) and its
 // documentation for educational, research and non-profit purposes, without fee,
 // and without a written agreement is hereby granted, provided that the above
-// copyright notice and the following three paragraphs appear in all copies.
-// A
+// copyright notice, this paragraph and the following three paragraphs appear in all copies.
+// 
 //
 // To request permission to incorporate this software into commercial products
 // contact Dr C. Godsalve, 42 Swainstone Road, Reading, Berks, UK or by email at
@@ -418,7 +418,7 @@ LIGHTS=false;
     xminexp=-1000.;  // in case xmin is exactly zero
     if(xmin>0)xminexp=floor(log10(xmin)); 
     if(xmin<0)xminexp=floor(log10(-xmin)); 
-
+    yminexp=-1000.;  // in case ymin is exactly zero
     if(ymin>0)yminexp=floor(log10(ymin));
     if(ymin<0)yminexp=floor(log10(-ymin));
 
@@ -429,7 +429,7 @@ LIGHTS=false;
       ostringstream xmod;
       if(xtimesdiv){
         if(xexp<0){
-           xmod << '*'; xmod << '1'; xmod << 'e'; xmod << '+';
+           xmod << '*'; xmod << '1'; xmod << 'e'; xmod << '-';
            xmod << fabs(xexp);}
            else{
            xmod << '/'; xmod << '1'; xmod << 'e'; xmod << '+';
@@ -442,7 +442,7 @@ LIGHTS=false;
       ostringstream ymod;
       if(ytimesdiv){
         if(yexp<0){
-           ymod << '*'; ymod << '1'; ymod << 'e'; ymod << '+';
+           ymod << '*'; ymod << '1'; ymod << 'e'; ymod << '-';
            ymod << fabs(yexp);}
            else{
            ymod << '/'; ymod << '1'; ymod << 'e'; ymod << '+';
