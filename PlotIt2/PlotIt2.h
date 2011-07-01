@@ -1,3 +1,29 @@
+//-------------------------------------------------------------------------------
+// Copyright 2008-2011 Christopher Godsalve.
+// All Rights Reserved.
+//
+// Permission to use, copy, modify and distribute this software (if not modified) and its
+// documentation for educational, research and non-profit purposes, without fee,
+// and without a written agreement is hereby granted, provided that the above
+// copyright notice - this paragraph - and the following three paragraphs appear in all copies.
+// 
+//
+// To request permission to incorporate this software into commercial products
+// contact Dr C. Godsalve, 42 Swainstone Road, Reading, Berks, UK or by email at
+// seagods@btinternet.com or seagods@hotmail.com.
+//
+// IN NO EVENT SHALL CHRISTOPHER GODSALVE BE LIABLE TO ANY PARTY FOR
+// DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, INCLUDING 
+// LOST PROFITS, ARISING OUT OF THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION, 
+// EVEN IF CHRITOPHER GODSALVE HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+//
+// CHRISTOPHER GODSALVE SPECIFICALLY DISCLAIMS ANY WARRANTIES, INCLUDING, BUT NOT
+// LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+// PURPOSE. THE SOFTWARE PROVIDED HEREUNDER IS ON AN `AS IS' BASIS, AND CHRISTOPHER 
+// GODSALVE HAS NO OBLIGATIONS TO PROVIDE MAINTAINANCE, SUPPORT, UPDATES, 
+// ENHANCEMENTS, OR MODIFICATIONS IF HE CHOOSES NOT TO DO SO.
+//--------------------------------------------------------------------------------
+
 #include <stdio.h>
 #include <stdarg.h>
 #include <stdlib.h>
