@@ -1,12 +1,11 @@
-//unless followed by glGetMaterial! 
 //-------------------------------------------------------------------------------
-// Copyright 20092-11 Christopher Godsalve.
+// Copyright 2009 Christopher Godsalve.
 // All Rights Reserved.
 //
 // Permission to use, copy, modify and distribute this software (if not modified) and its
 // documentation for educational, research and non-profit purposes, without fee,
 // and without a written agreement is hereby granted, provided that the above
-// copyright notice and the following three paragraphs appear in all copies.
+// copyright notice - this paragraph -  and the following three paragraphs appear in all copies.
 // 
 //
 // To request permission to incorporate this software into commercial products
