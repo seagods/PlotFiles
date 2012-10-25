@@ -1,7 +1,7 @@
 I deleted the old Plotfiles, the new ones now use freetype2/OGLFT whereas before
 they used freetype1/OGLFT.
 
-Well that was all there was in the README for a while, but I recently changed
+Well that was all there was in the README for a over 2 years, but I recently changed
 over to opensuse 12.2, and I found stuff rather difficult.
 
 I needed the following stuff installed, along with the development files.
