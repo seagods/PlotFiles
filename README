@@ -1,2 +1,46 @@
 I deleted the old Plotfiles, the new ones now use freetype2/OGLFT whereas before
 they used freetype1/OGLFT.
+
+Well that was all there was in the README for a while, but I recently changed
+over to opensuse 12.2, and I found stuff rather difficult.
+
+I needed the following stuff installed, along with the development files.
+gltt, fontconfig, libqt4 (with qt3 support) lib Xft, SDL, freeglut, and
+all the freetype and truetype stuff (especially freetype2)
+
+First, OGLFT is still required (version 0.9) you can install with rpm or tarfile. If you use a tar file, just configure --prefix=/usr, make, make install.
+
+GLee is still required: get the tarball for version 3.10. Don't bother with
+higher versions - oglft can't work with them. Again, use prefix=/usr.
+
+Compilation, you need gnu make, the gcc 
+
+Then, add the magic lines tou your .bashrc file
+
+
+export PATH=$PATH:./
+export CPATH=$CPATH:/usr/include/freetype2
+export CPATH=$CPATH:/usr/lib64/qt4/include
+export CPATH=$CPATH:/usr/lib64/qt4/include/Qt
+
+Otherwise you get compile errors.
+
+After that, download the bitmaps and XFiles from my github, and 
+add them to /usr/local/include
+
+Finally, download my fonts from my github and add them to /usr/share/fonts
+
+
+and all was well
+
+At least on opensuse.
+
+
+If you manage to get things installed on MS windows, please send
+my instructions at seagods@hotmail.com.
+
+
+
+
+
+
