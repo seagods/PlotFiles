@@ -2,7 +2,7 @@ TARGET		=PlotPol
 
 $(TARGET):	PlotPol.o   gl2ps.o  
 	g++ -g -o $(TARGET) PlotPol.o  gl2ps.o  \
-	 `sdl-config --libs` -lGL -lGLU -lOGLFT -lm
+	 `sdl-config --libs` -lGL -lGLU -lOGLFT -lm -lmylib -lgfortran
 
 PlotPol.o:   
 	g++ -g  -c PlotPol.cpp `sdl-config --cflags` 

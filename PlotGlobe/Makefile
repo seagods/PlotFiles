@@ -2,7 +2,7 @@ TARGET		=PlotGlobe
 
 $(TARGET):	PlotGlobe.o   gl2ps.o  
 	g++ -g -o $(TARGET) PlotGlobe.o  gl2ps.o  \
-	 `sdl-config --libs` -lGL -lGLU -lOGLFT  -lm
+	 `sdl-config --libs` -lGL -lGLU -lOGLFT  -lm -lmylib -lgfortran
 
 PlotGlobe.o:   
 	g++ -g  -c PlotGlobe.cpp `sdl-config --cflags` 

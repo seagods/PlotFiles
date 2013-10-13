@@ -261,9 +261,10 @@ LIGHTS=false;
     npoint=(int*)calloc(nplots,sizeof(int));
 
     //ndata -- number of points
-    //ntype, 1 for lines, 0 for points
-    //ncol  initial colour number, 0=black
-    //nstyle  select line style if lines
+    //ntype,  select 1 for lines, 0 for points
+    //ncol    selects initial colour number, 0=black
+    //nstyle  selects line style if lines
+    //npoint  selects point size
     //could adapt to symbols for ntype=0 later
 
     x=(double**)calloc(nplots,sizeof(double*));

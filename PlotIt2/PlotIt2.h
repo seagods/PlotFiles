@@ -151,9 +151,10 @@ typedef CMyTriOctTree<ONode> OTree;   //OctTree consists of nodes
         OTree* CollideTree;
 /**********************************************************************/
 #include "/usr/local/include/XFiles/Dmatrix.h"
-#include "/usr/local/include/XFiles/Solver.h"
+//#include "/usr/local/include/XFiles/Solver.h"
 /**********************************************************************/
-void Solver(int &dim, double &maxerr, Dmatrix& Matrix, Dvector& rhs, Dvector& SolveVec);
+//void Solver(int &dim, double &maxerr, Dmatrix& Matrix, Dvector& rhs, Dvector& SolveVec);
+int myGaussElim(int& dimen , double** Matr , double* VexRhs, double* VexLhs );
 /**********************************************************************/
 
 D3Dvec RealCamPos;  //periodic boundary conditions

@@ -2,7 +2,7 @@ TARGET		=PlotCont
 
 $(TARGET):	PlotCont.o   gl2ps.o  
 	g++ -g -o $(TARGET) PlotCont.o  gl2ps.o  \
-	 `sdl-config --libs` -lGL -lGLU -lOGLFT -lm
+	 `sdl-config --libs` -lGL -lGLU -lOGLFT -lm -lmylib -lgfortran
 
 PlotCont.o:   
 	g++ -g  -c PlotCont.cpp `sdl-config --cflags` 

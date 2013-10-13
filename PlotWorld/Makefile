@@ -2,7 +2,7 @@ TARGET		=PlotWorld
 
 $(TARGET):	PlotWorld.o   gl2ps.o  
 	g++ -g -o $(TARGET) PlotWorld.o  gl2ps.o  \
-	 `sdl-config --libs` -lGL -lGLU -lOGLFT  -lm
+	 `sdl-config --libs` -lGL -lGLU -lOGLFT  -lm -lmylib -lgfortran
 
 PlotWorld.o:   
 	g++ -g  -c PlotWorld.cpp `sdl-config --cflags` 

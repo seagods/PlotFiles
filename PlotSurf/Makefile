@@ -2,7 +2,7 @@ TARGET		=PlotSurf
 
 $(TARGET):	PlotSurf.o   gl2ps.o  
 	g++ -g -o $(TARGET) PlotSurf.o  gl2ps.o  \
-	 `sdl-config --libs` -lGL -lGLU -lOGLFT  -lm
+	 `sdl-config --libs` -lGL -lGLU -lOGLFT  -lm -lmylib -lgfortran
 
 PlotSurf.o:   
 	g++ -g  -c PlotSurf.cpp `sdl-config --cflags` 

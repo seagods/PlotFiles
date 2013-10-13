@@ -125,9 +125,6 @@ typedef CMyTriOctTree<ONode> OTree;   //OctTree consists of nodes
         OTree* CollideTree;
 /**********************************************************************/
 #include "../../XFiles/Dmatrix.h"
-#include "../../XFiles/Solver.h"
-/**********************************************************************/
-void Solver(int &dim, double &maxerr, Dmatrix& Matrix, Dvector& rhs, Dvector& SolveVec);
 /**********************************************************************/
 
 D3Dvec RealCamPos;  //periodic boundary conditions

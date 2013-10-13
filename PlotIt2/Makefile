@@ -2,7 +2,7 @@ TARGET		=PlotIt2
 
 $(TARGET):	PlotIt2.o   gl2ps.o  
 	g++ -g -o $(TARGET) PlotIt2.o  gl2ps.o  \
-	 `sdl-config --libs` -lGL -lGLU -lOGLFT  -lm
+	 `sdl-config --libs` -lGL -lGLU -lOGLFT  -lm -lmylib -lgfortran
 
 PlotIt2.o:   
 	g++ -g  -c PlotIt2.cpp `sdl-config --cflags` 
